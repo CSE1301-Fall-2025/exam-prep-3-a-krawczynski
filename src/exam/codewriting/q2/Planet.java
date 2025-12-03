@@ -9,18 +9,26 @@ public class Planet {
 
 	// Define your instance variables here
 	
+	private String name;
+	private int mass;
+	
 	// Write the constructor for the Planet class
 	
+	public Planet(String name, int mass) {
+		this.name = name;
+		this.mass = mass;
+	}
+
 	public String getName () {
-		return ""; //FIXME
+		return name; //FIXME
 	}
 	
 	public int getMass () {
-		return 0; //FIXME
+		return mass; //FIXME
 	}
 	
 	public String toString () {
-		return ""; //FIXME
+		return "Planet " + name + ": " + mass; //FIXME
 	}
 	
 	/**
@@ -29,7 +37,9 @@ public class Planet {
 	* involved in the collision, and it should be named after both planets.
 	*/
 	public Planet collide ( Planet other ) {
-		return null; //FIXME
+		String newName = this.name + other.name;
+		int newMass = this.mass + other.mass;
+		return new Planet(newName, newMass);
 	}
 	
 	
